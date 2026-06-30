@@ -1,12 +1,4 @@
-
-<img src="https://via.placeholder.com/800x400">
-
-<h3>Naslov tvoje vijesti</h3>
-
-<p>
-Ovdje napiši tekst vijesti.
-Možeš dodati najnovije informacije,
-slike i detalje.```html
+```html
 <!DOCTYPE html>
 <html lang="bs">
 <head>
@@ -21,154 +13,281 @@ slike i detalje.```html
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-    background:#f1f1f1;
+    background:#f5f5f5;
     color:#222;
 }
 
+
+/* Zaglavlje */
+
 header{
-    background:#0b3d91;
-    color:white;
-    text-align:center;
-    padding:35px;
+    background:white;
+    border-bottom:4px solid #c90000;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-header h1{
-    font-size:40px;
+.logo{
+    font-size:35px;
+    font-weight:bold;
+    color:#c90000;
 }
+
+.datum{
+    color:#555;
+}
+
+
+/* Navigacija */
 
 nav{
-    background:white;
-    padding:15px;
-    text-align:center;
-    box-shadow:0 2px 5px #ccc;
+    background:#222;
+    padding:12px;
 }
 
 nav a{
+    color:white;
     text-decoration:none;
-    color:#0b3d91;
-    margin:10px;
+    margin-right:25px;
     font-weight:bold;
 }
 
-main{
-    max-width:1000px;
-    margin:30px auto;
-    padding:15px;
+nav a:hover{
+    color:#ff3333;
 }
+
+
+/* Breaking news */
+
+.traka{
+    background:#c90000;
+    color:white;
+    padding:12px;
+    font-weight:bold;
+}
+
+
+/* Glavni dio */
+
+main{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
+
 
 .glavna{
     background:white;
-    padding:25px;
-    border-radius:15px;
+    padding:20px;
+    margin-bottom:25px;
 }
+
 
 .glavna img{
     width:100%;
-    border-radius:10px;
+    height:400px;
+    object-fit:cover;
+}
+
+
+.glavna h1{
+    font-size:35px;
     margin:15px 0;
 }
 
-button{
-    background:#0b3d91;
+
+.dugme{
+    background:#c90000;
     color:white;
-    border:0;
-    padding:12px 25px;
-    border-radius:8px;
+    padding:12px 20px;
+    border:none;
     margin-top:15px;
     cursor:pointer;
 }
 
-.vijesti{
-    display:flex;
-    gap:20px;
-    margin-top:25px;
+
+
+/* Vijesti */
+
+.naslov{
+    border-left:6px solid #c90000;
+    padding-left:10px;
+    margin-bottom:15px;
 }
+
+
+.vijesti{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
 
 .kartica{
     background:white;
-    padding:20px;
-    border-radius:15px;
-    flex:1;
+    padding:15px;
 }
+
+
+.kartica img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+}
+
 
 .kartica h3{
-    color:#0b3d91;
+    margin:10px 0;
 }
 
+
+/* Footer */
+
 footer{
-    background:#111;
+    background:#222;
     color:white;
     text-align:center;
-    padding:20px;
+    padding:25px;
     margin-top:30px;
 }
 
 
-@media(max-width:700px){
-    .vijesti{
-        flex-direction:column;
-    }
 
-    header h1{
-        font-size:30px;
-    }
+@media(max-width:700px){
+
+.vijesti{
+    grid-template-columns:1fr;
+}
+
+.glavna h1{
+    font-size:25px;
+}
+
+header{
+    display:block;
+}
+
 }
 
 </style>
 
 </head>
 
+
 <body>
 
+
 <header>
-<h1>📰 Kan Vijesti</h1>
-<p>Najnovije vijesti na jednom mjestu</p>
+
+<div class="logo">
+📰 Kan Vijesti
+</div>
+
+<div class="datum">
+01. Jul 2026.
+</div>
+
 </header>
 
 
+
 <nav>
+
 <a href="#">Početna</a>
+<a href="#">Politika</a>
 <a href="#">Sport</a>
 <a href="#">Svijet</a>
+<a href="#">Kultura</a>
 <a href="#">Tehnologija</a>
-<a href="#">Kontakt</a>
+
 </nav>
+
+
+
+<div class="traka">
+🔴 NAJNOVIJE: Ovo je prostor za udarne vijesti...
+</div>
+
 
 
 <main>
 
+
 <section class="glavna">
 
-<h2>🔥 Najnovija vijest</h2>
+<img src="https://via.placeholder.com/1100x500">
 
+<h1>
+Glavna vijest dana - naslov ovdje
+</h1>
+
+<p>
+Ovdje ide veliki opis glavne vijesti.
+Dodaj tekst, informacije i detalje.
 </p>
 
-<button>Pročitaj više</button>
+<button class="dugme">
+Pročitaj više
+</button>
 
 </section>
 
 
+
+<h2 class="naslov">
+Najnovije vijesti
+</h2>
+
+
+
 <section class="vijesti">
 
+
 <div class="kartica">
-<h3>🏀 Sport</h3>
-<p>Rezultati, transferi i sportske zanimljivosti.</p>
+
+<img src="https://via.placeholder.com/400x200">
+
+<h3>🏀 Sportske vijesti</h3>
+
+<p>
+Najnoviji rezultati i događaji iz svijeta sporta.
+</p>
+
 </div>
 
 
+
 <div class="kartica">
+
+<img src="https://via.placeholder.com/400x200">
+
 <h3>🌍 Svijet</h3>
-<p>Najvažnije vijesti iz svijeta.</p>
+
+<p>
+Najvažnije informacije iz zemlje i svijeta.
+</p>
+
 </div>
 
 
+
+
 <div class="kartica">
+
+<img src="https://via.placeholder.com/400x200">
+
 <h3>💻 Tehnologija</h3>
-<p>Nove tehnologije i zanimljivosti.</p>
+
+<p>
+Novosti iz svijeta tehnologije.
+</p>
+
 </div>
 
 
@@ -178,9 +297,13 @@ footer{
 </main>
 
 
+
 <footer>
-© 2026 Kan Vijesti
+
+© 2026 Kan Vijesti | Sva prava zadržana
+
 </footer>
+
 
 
 </body>
